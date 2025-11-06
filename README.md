@@ -19,6 +19,7 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 ## Demo
 
 Preview:
+![Create Next App](https://github.com/user-attachments/assets/f2e2946d-82a1-4ff4-8ccb-af9d07dcfb6b)
 
 live:
 
