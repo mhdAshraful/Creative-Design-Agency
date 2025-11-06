@@ -1,0 +1,67 @@
+import React, { useState } from "react";
+
+interface Entry {
+	picture: string;
+	name: string;
+	designation: string;
+	testimonial: string;
+}
+interface SliderProps {
+	// Define any props if needed
+	entris: Entry[];
+}
+
+const Slider = ({ entris }: SliderProps) => {
+	const [index, setIndex] = useState(0);
+	const next = () => setIndex((i) => (i + 1) % entris.length);
+	const prev = () => setIndex((i) => (i - 1 + entris.length) % entris.length);
+
+	return (
+		<div className="w-full overflow-hidden relative flex flex-col gap-0 ">
+			{/* slides */}
+			<div
+				className="flex transition-transform duration-500 pb-4"
+				style={{ transform: `translateX(-${index * 100}%)` }}
+			>
+				{entris.map((entry, i) => (
+					<div key={i} className="w-full flex-shrink-0 ">
+						<h3 className="font-regular text-4xl tracking-tight leading-[38px] before:content-['\201C'] after:content-['\201D'] py-4 md:py-10">
+							{entry.testimonial}
+						</h3>
+						<div className="flex items-center gap-2 ">
+							<img
+								className="w-12.5 h-12.5 rounded-full bg-amber-300"
+								src={entry.picture}
+								alt={entry.name}
+							/>
+							<div>
+								<p className="text-lg">{entry.name}</p>
+								<p className="text-sm text-textgray">
+									{" "}
+									{entry.designation}
+								</p>
+							</div>
+						</div>
+					</div>
+				))}
+			</div>
+
+			{/* controls */}
+			<div className="flex justify-center ">
+				<div className="flex justify-around items-center  w-12 h-4 border border-15percent rounded-[0.5rem] ">
+					{entris.map((_, i) => (
+						<button
+							key={i}
+							onClick={() => setIndex(i)}
+							className={` w-2 h-2 rounded-full  ${
+								index === i ? "bg-blue-500" : "bg-gray-300"
+							}`}
+						/>
+					))}
+				</div>
+			</div>
+		</div>
+	);
+};
+
+export default Slider;
