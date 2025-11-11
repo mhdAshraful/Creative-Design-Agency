@@ -62,11 +62,11 @@ const Home = () => {
 	return (
 		<>
 			{/* Hero Section */}
-			<div className="w-full h-screen flex flex-col items-center justify-center relative mt-[-200px] md:mt-[-130px] lg:mt-[-100px] mb-10">
+			<div className="w-full h-[80vh] flex flex-col items-center justify-center relative mt-[-100px] md:mt-[-130px] lg:mt-[-100px]">
 				<h6 className="z-10 fonts-inter uppercase font-medium mb-4 text-[clamp(16px,calc(16px+(28-16)*((90vw-375px)/(1440-375))),28px)]">
 					design without boundaries
 				</h6>
-				<h1 className="z-10 fonts-sixCaps uppercase leading-[1] whitespace-nowrap break-keep tracking-[-2px] text-[clamp(122px,calc(122px+(445-122)*((90vw-375px)/(1440-375))),445px)]">
+				<h1 className="z-10 fonts-sixCaps uppercase leading-[1] whitespace-nowrap break-keep tracking-[-6px] sm:tracking-[-4px] md:tracking-[-2px] lg:tracking-[0] text-[clamp(122px,calc(122px+(445-122)*((90vw-320px)/(1440-320))),445px)]">
 					Creative Design
 				</h1>
 				<div className="z-10  fonts-inter font-normal mt-4 leading-[1.375rem]  md:leading-[2rem] lg:leading-[2rem]  w-[70%] md:w-[90%] lg:w-[100%] flex flex-col items-center justify-center text-center text-[clamp(16px,calc(16px+(28-16)*((90vw-375px)/(1440-375))),28px)]">
@@ -77,11 +77,11 @@ const Home = () => {
 				<Image
 					src={bg}
 					alt="background photo"
-					className=" absolute top-[70%] md:top-[60%] lg:top-[55%]left-1/2 md:left-1/2 -translate-x-1/2 scale-x-450 scale-y-450 md:scale-x-310 md:scale-y-310 lg:scale-x-150 lg:scale-y-160"
+					className=" absolute top-[60%] md:top-[60%] lg:top-[55%] left-1/2 md:left-1/2 -translate-x-1/2 scale-x-350 scale-y-350 md:scale-x-310 md:scale-y-310 lg:scale-x-150 lg:scale-y-160"
 				/>
 			</div>
 			{/* Our Service */}
-			<div className="flex flex-col w-full min-h-screen mt-20 border-t-1 border-15percent pt-4">
+			<div className="flex flex-col w-full min-h-auto mt-10 border-t-1 border-15percent pt-4">
 				<p className="capitalize text-textgray text-[14px] font-inter font-semibold ">
 					our services
 				</p>
@@ -120,13 +120,13 @@ const Home = () => {
 					Featured Projects
 				</p>
 				<h2
-					className="text-[1.75rem] font-bold w-full md:w-[35.375rem]"
+					className="text-[1.75rem] font-bold w-full md:w-[33rem]"
 					dangerouslySetInnerHTML={{ __html: db.fearturedProjects.title }}
 				/>
 				<div>
 					{db.fearturedProjects.projects.map((project, index) => (
 						<Card key={index}>
-							<CardHeader className=" relative w-full h-[20.5rem] sm:h-[15.5rem] md:h-[28.628rem] ">
+							<CardHeader className=" relative w-full h-[20.5rem] sm:h-[15.5rem] md:h-114 lg:h-150">
 								<Image
 									src={project.imageUrl}
 									alt="background photo"
@@ -135,7 +135,9 @@ const Home = () => {
 								/>
 							</CardHeader>
 							<CardContent>
-								<CardTitle>{project.name}</CardTitle>
+								<CardTitle className="text-[clamp(18px,calc(18px+(36-18)*((90vw-330px)/(1440-320))),36px)]">
+									{project.name}
+								</CardTitle>
 								<span className="">{project.category}</span>
 
 								<CardDescription>{project.date}</CardDescription>
@@ -167,7 +169,7 @@ const Home = () => {
 						reverse={false}
 						pauseOnHover={false}
 						className="" // pass class to change gap or speed
-						innerClassName="" // pass class to change gap or speed
+						innerClassName=" gap-2" // pass class to change gap or speed
 					>
 						<Image
 							src={"/Images/Client-1.png"}
@@ -237,41 +239,50 @@ const Home = () => {
 			</div>
 
 			{/* Testimonial */}
-			<div className="flex flex-col w-full h-auto mt-10 border-t-1 border-15percent pt-4">
-				<p className="capitalize text-textgray text-[14px] font-inter font-semibold  ">
-					Testimonial
-				</p>
-				<h2
-					className="text-[1.75rem] font-bold w-full md:w-[35.375rem]"
-					dangerouslySetInnerHTML={{ __html: db.testimonials.title }}
-				/>
-				<div className="flex flex-col md:flex-row lg:flex-row-reverse">
+			<div className="">
+				<div className="border-t-1 border-15percent mt-10">
+					<p className="capitalize text-textgray py-4 text-[14px] font-inter font-semibold  ">
+						Testimonial
+					</p>
+					<h2
+						className="text-[1.75rem] leading-tight font-bold w-full md:w-[35.375rem]"
+						dangerouslySetInnerHTML={{ __html: db.testimonials.title }}
+					/>
+				</div>
+				<div className="relative w-full flex flex-col lg:flex-row items-start justify-start gap-4 md:gap-8 lg:gap-10 py-14">
 					{/* overall */}
-					<div className="flex flex-col items-start justify-center w-full md:w-2/3 lg:w-3/4  gap-[1rem] sm:gap-[1.25rem] md:gap-[3.25rem] mt-10">
-						<p>{db.testimonials.ovarall.title}</p>
-						<div className="flex flex-row items-center justify-start gap-4 mt-4">
-							<img src={db.testimonials.ovarall.logo} alt="logo" />
-							<div className="flex flex-col">
-								<div className="flex flex-row items-center justify-start gap-1">
-									<p>{db.testimonials.ovarall.rating}/5</p>
+					{/* flex flex-col items-start justify-center w-full lg:w-[45%] mt-10 lg:mt-0 */}
+					<div className=" w-full ">
+						<p className="text-[1rem]">{db.testimonials.overall.title}</p>
+						{/* flex flex-row items-center justify-start mt-4 */}
+						<div className=" w-fit flex flex-row items-center justify-start mt-4 p-4 gap-4 border-1 border-15percent rounded-[40px]">
+							<img src={db.testimonials.overall.logo} alt="logo" />
+							{/* flex flex-col */}
+							<div className=" ">
+								{/* flex flex-row items-center justify-start */}
+								<div className="flex flex-row items-center justify-start gap-2">
+									<p>{db.testimonials.overall.rating}/5</p>
 									<img
-										src={db.testimonials.ovarall.stars}
-										alt="starts"
+										src={db.testimonials.overall.stars}
+										alt="stars"
 									/>
 								</div>
-								<p>{db.testimonials.ovarall.sampleSize}</p>
+								<p>{db.testimonials.overall.sampleSize}</p>
 							</div>
 						</div>
 					</div>
 					{/* Entries */}
-					<div className="w-full overflow-hidden relative">
-						<Slider entris={db.testimonials.entries} />
+					{/* w-full lg:w-[45%] overflow-hidden relative mt-10 lg:mt-0 */}
+					<div className=" w-full mt-6">
+						<Slider entries={db.testimonials.entries} />
 					</div>
 				</div>
 			</div>
 
 			{/* Contact us */}
-			<Contactus data={db.contactus} />
+			<div className="w-full md:flex md:flex-col  md:self-center">
+				<Contactus data={db.contactus} />
+			</div>
 		</>
 	);
 };

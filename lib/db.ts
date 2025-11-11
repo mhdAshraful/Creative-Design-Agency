@@ -86,7 +86,7 @@ export const db = {
 	},
 	testimonials: {
 		title: `Real stories from clients who trusted us and <span class="text-textgray"> experienced the impact of our work.</span>`,
-		ovarall: {
+		overall: {
 			title: "Our clients’ feedback reflects the dedication, creativity, and quality we bring to every project. We pride ourselves on delivering results that exceed expectations.",
 			rating: 4.9,
 			sampleSize: "Based on 2,8K reviews",
@@ -133,6 +133,7 @@ export const db = {
 		},
 	},
 	footer: {
+		imageurl: "/Images/footer.png",
 		ctaSubQ: "Ready to capture the moments that matter most?",
 		ctaMainQ: "Let's make it happen.  Contact me today!",
 		legal: "© 2025 - Framefolio. All Right Reserved",

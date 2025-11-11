@@ -140,7 +140,7 @@ a,
 button {
 	-webkit-tap-highlight-color: transparent; /* removes click highlight on mobile */
 }
-/* --- */
+/*  */
 @keyframes marquee-left {
 	from {
 		transform: translateX(0);
@@ -162,27 +162,6 @@ button {
 }
 .animate-marquee-up {
 	animation: marquee-up var(--duration, 40s) linear infinite;
-}
-.flex {
-	display: flex;
-}
-.shrink-0 {
-	flex-shrink: 0;
-}
-.flex-row {
-	flex-direction: row;
-}
-.flex-col {
-	flex-direction: column;
-}
-.justify-around {
-	justify-content: space-around;
-}
-.gap-\[1rem\] {
-	gap: 1rem;
-}
-.overflow-hidden {
-	overflow: hidden;
 }
 .direction-reverse {
 	animation-direction: reverse;
