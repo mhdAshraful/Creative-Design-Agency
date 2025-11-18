@@ -125,13 +125,12 @@ export async function POST(request: Request) {
 			},
 			{ status: 200 }
 		);
-	} catch (error: any) {
+	} catch (error) {
 		console.error("Error sending contact form email:", error);
 		return NextResponse.json<ContactResponse>(
 			{
 				success: false,
 				message: "There was an error sending your project request.",
-				error: error.message,
 				messageID: undefined,
 				previewUrl: undefined,
 			},

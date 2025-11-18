@@ -26,8 +26,6 @@ import Slider from "@/components/ui/slider";
 import Contactus from "@/components/Contactus";
 
 const Home = () => {
-	const homeRef = useRef(null);
-
 	/**
 	 * Font Sizes Scaling Formula
 	 *
@@ -121,7 +119,9 @@ const Home = () => {
 				</p>
 				<h2
 					className="text-[1.75rem] font-bold w-full md:w-[33rem]"
-					dangerouslySetInnerHTML={{ __html: db.fearturedProjects.title }}
+					dangerouslySetInnerHTML={{
+						__html: db.fearturedProjects.title,
+					}}
 				/>
 				<div>
 					{db.fearturedProjects.projects.map((project, index) => (
@@ -140,7 +140,9 @@ const Home = () => {
 								</CardTitle>
 								<span className="">{project.category}</span>
 
-								<CardDescription>{project.date}</CardDescription>
+								<CardDescription>
+									{project.date}
+								</CardDescription>
 							</CardContent>
 						</Card>
 					))}
@@ -246,17 +248,24 @@ const Home = () => {
 					</p>
 					<h2
 						className="text-[1.75rem] leading-tight font-bold w-full md:w-[35.375rem]"
-						dangerouslySetInnerHTML={{ __html: db.testimonials.title }}
+						dangerouslySetInnerHTML={{
+							__html: db.testimonials.title,
+						}}
 					/>
 				</div>
 				<div className="relative w-full flex flex-col lg:flex-row items-start justify-start gap-4 md:gap-8 lg:gap-10 py-14">
 					{/* overall */}
 					{/* flex flex-col items-start justify-center w-full lg:w-[45%] mt-10 lg:mt-0 */}
 					<div className=" w-full ">
-						<p className="text-[1rem]">{db.testimonials.overall.title}</p>
+						<p className="text-[1rem]">
+							{db.testimonials.overall.title}
+						</p>
 						{/* flex flex-row items-center justify-start mt-4 */}
 						<div className=" w-fit flex flex-row items-center justify-start mt-4 p-4 gap-4 border-1 border-15percent rounded-[40px]">
-							<img src={db.testimonials.overall.logo} alt="logo" />
+							<img
+								src={db.testimonials.overall.logo}
+								alt="logo"
+							/>
 							{/* flex flex-col */}
 							<div className=" ">
 								{/* flex flex-row items-center justify-start */}

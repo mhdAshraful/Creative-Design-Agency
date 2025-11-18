@@ -9,11 +9,21 @@ import { Button } from "./ui/button";
 import { ArrowUpRight } from "lucide-react";
 import { ContactFormData } from "@/lib/types";
 
-const Contactus = ({
+interface ContactusProps {
+	className?: string;
+	data: {
+		title: string;
+		interestedIn: string[];
+		budget: {
+			range: string[];
+		};
+	};
+}
+
+const Contactus: React.FC<ContactusProps> = ({
 	className,
 	data,
-	...props
-}: React.ComponentProps<"div"> & { data: any }) => {
+}) => {
 	const { title, interestedIn, budget } = data;
 	const [formData, setFormData] = useState<ContactFormData>({
 		name: "",
@@ -122,7 +132,7 @@ const Contactus = ({
 				{title}
 			</h2>
 			<form onSubmit={handleSubmit}>
-				<p className="text-textgray">I'm interested in... </p>
+				<p className="text-textgray">I`&apos;`m interested in... </p>
 				<div className="flex flex-row flex-wrap mt-4 mb-8">
 					{interestedIn.map((interest: string) => (
 						<Toggle
