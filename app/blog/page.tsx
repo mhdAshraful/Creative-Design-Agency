@@ -1,7 +1,8 @@
+import PageNotFound from "@/components/ui/404";
 import React from "react";
 
 const Blog = () => {
-	return <div className="text-6xl">Blog</div>;
+	return <PageNotFound />;
 };
 
 export default Blog;

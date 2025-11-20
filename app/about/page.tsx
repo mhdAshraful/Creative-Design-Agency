@@ -1,7 +1,8 @@
+import PageNotFound from "@/components/ui/404";
 import React from "react";
 
 const About = () => {
-	return <div className="text-9xl">About</div>;
+	return <PageNotFound />;
 };
 
 export default About;

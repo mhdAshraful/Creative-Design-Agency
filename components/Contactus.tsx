@@ -20,10 +20,7 @@ interface ContactusProps {
 	};
 }
 
-const Contactus: React.FC<ContactusProps> = ({
-	className,
-	data,
-}) => {
+const Contactus: React.FC<ContactusProps> = ({ className, data }) => {
 	const { title, interestedIn, budget } = data;
 	const [formData, setFormData] = useState<ContactFormData>({
 		name: "",
@@ -124,7 +121,7 @@ const Contactus: React.FC<ContactusProps> = ({
 	return (
 		<div
 			className={cn(
-				"box-border flex flex-col w-full md:w-1/2 md:self-center h-auto mt-20 mb-10",
+				"box-border flex flex-col w-full md:w-1/2 md:self-center h-auto mt-20 mb-25 lg:mb-0",
 				className
 			)}
 		>
@@ -132,7 +129,7 @@ const Contactus: React.FC<ContactusProps> = ({
 				{title}
 			</h2>
 			<form onSubmit={handleSubmit}>
-				<p className="text-textgray">I`&apos;`m interested in... </p>
+				<p className="text-textgray">I&apos;m interested in... </p>
 				<div className="flex flex-row flex-wrap mt-4 mb-8">
 					{interestedIn.map((interest: string) => (
 						<Toggle

@@ -22,15 +22,17 @@ const Navbar = () => {
 						width={28}
 						height={22}
 					/>
-					<p className="font-manrope text-2xl font-bold">Framefolio</p>
+					<p className="font-manrope text-2xl font-bold">
+						Framefolio
+					</p>
 				</div>
 
 				<NavigationMenu className="outline p-1 rounded-3xl hidden md:hidden lg:flex ">
 					<NavigationMenuList>
 						{/* Navigation items go here */}
 						<NavigationMenuLink
-							href="/home"
-							data-active={pathname === "/home"}
+							href="./"
+							data-active={pathname === "/"}
 						>
 							Home
 						</NavigationMenuLink>
