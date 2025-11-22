@@ -31,7 +31,6 @@ import { db } from "@/lib/db";
 import { Button } from "@/components/ui/button";
 import Slider from "@/components/ui/slider";
 import Contactus from "@/components/Contactus";
-import Footer from "@/components/Footer";
 
 const Home = () => {
 	/**
@@ -148,9 +147,7 @@ const Home = () => {
 								</CardTitle>
 								<span className="">{project.category}</span>
 
-								<CardDescription>
-									{project.date}
-								</CardDescription>
+								<CardDescription>{project.date}</CardDescription>
 							</CardContent>
 						</Card>
 					))}
@@ -263,20 +260,14 @@ const Home = () => {
 				</div>
 				<div className="class_1 relative w-full flex flex-col lg:flex-row items-start justify-start gap-4 md:gap-8 lg:gap-10 py-14">
 					{/* overall */}
-					{/* flex flex-col items-start justify-center w-full lg:w-[45%] mt-10 lg:mt-0 */}
+
 					<div className=" class_2 w-full ">
-						<p className="text-[1rem]">
-							{db.testimonials.overall.title}
-						</p>
-						{/* flex flex-row items-center justify-start mt-4 */}
+						<p className="text-[1rem]">{db.testimonials.overall.title}</p>
+
 						<div className="class_3 w-fit flex flex-row items-center justify-start mt-4 p-4 gap-4 border-1 border-15percent rounded-[40px]">
-							<img
-								src={db.testimonials.overall.logo}
-								alt="logo"
-							/>
-							{/* flex flex-col */}
+							<img src={db.testimonials.overall.logo} alt="logo" />
+
 							<div className="class_4 ">
-								{/* flex flex-row items-center justify-start */}
 								<div className="flex flex-row items-center justify-start gap-2">
 									<p>{db.testimonials.overall.rating}/5</p>
 									<img
@@ -289,7 +280,7 @@ const Home = () => {
 						</div>
 					</div>
 					{/* Entries */}
-					{/* w-full lg:w-[45%] overflow-hidden relative mt-10 lg:mt-0 */}
+
 					<div className=" w-full mt-6 lg:mt-0">
 						<Slider entries={db.testimonials.entries} />
 					</div>
