@@ -25,7 +25,10 @@ const manrope = Manrope({
 export const metadata: Metadata = {
 	title: "Framefolio",
 	description: "Creative Design Studio, crafting modern web experiences",
+
 };
+
+
 
 export default function RootLayout({
 	children,
